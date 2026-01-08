@@ -1,5 +1,5 @@
 /**
- * OUT OF ARCHITECTURE - Main JavaScript
+ * ARCHITECTURE OUTLIER - Main JavaScript
  * 
  * A clean, simple implementation that:
  * - Handles hero-to-navbar morphing animation on scroll
@@ -380,8 +380,17 @@ function buildCategoryColumn(category, catIndex) {
 }
 
 /**
+ * Detect if device supports touch.
+ * @returns {boolean} True if touch device.
+ */
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+/**
  * Creates a subcategory item.
  * Clicking any subcategory opens the popup showing all projects/people.
+ * Uses hover on desktop, tap on mobile.
  * 
  * @param {Object} sub - Subcategory object with name and projects array.
  * @param {number} catIndex - Category index for stagger animation.
@@ -402,27 +411,51 @@ function buildSubcategoryItem(sub, catIndex, subIndex) {
     nameSpan.textContent = sub.name;
     item.appendChild(nameSpan);
     
-    // Hover handler - open popup on mouse enter
-    item.addEventListener('mouseenter', () => {
-        currentHoveredItem = item;
-        
-        // Cancel any pending close
-        cancelPopoverClose();
-        
-        // Open popover immediately (no delay - feels more responsive)
-        openPopover(sub, item);
-    });
+    // Check if touch device
+    const isTouch = isTouchDevice();
     
-    // Close popup when mouse leaves - with generous delay
-    item.addEventListener('mouseleave', () => {
-        // Only clear if this is the item we're leaving
-        if (currentHoveredItem === item) {
-            currentHoveredItem = null;
-        }
+    if (isTouch) {
+        // Touch device: use click/tap to toggle popup
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // If this item's popup is already open, close it
+            if (currentHoveredItem === item && elements.popover.classList.contains('is-open')) {
+                closePopover();
+                return;
+            }
+            
+            // Close any existing popup first
+            closePopover();
+            
+            // Open popup for this item
+            currentHoveredItem = item;
+            openPopover(sub, item);
+        });
+    } else {
+        // Desktop: use hover
+        item.addEventListener('mouseenter', () => {
+            currentHoveredItem = item;
+            
+            // Cancel any pending close
+            cancelPopoverClose();
+            
+            // Open popover immediately (no delay - feels more responsive)
+            openPopover(sub, item);
+        });
         
-        // Delay close to allow mouse to reach popover
-        schedulePopoverClose();
-    });
+        // Close popup when mouse leaves - with generous delay
+        item.addEventListener('mouseleave', () => {
+            // Only clear if this is the item we're leaving
+            if (currentHoveredItem === item) {
+                currentHoveredItem = null;
+            }
+            
+            // Delay close to allow mouse to reach popover
+            schedulePopoverClose();
+        });
+    }
     
     // Keyboard accessibility - open on focus
     item.setAttribute('role', 'button');
@@ -684,19 +717,24 @@ function initPopoverListeners() {
         return;
     }
     
-    // Track mouse over popover - cancel close when entering
-    elements.popover.addEventListener('mouseenter', () => {
-        mouseOverPopover = true;
-        cancelPopoverClose();
-    });
+    const isTouch = isTouchDevice();
     
-    // Schedule close when leaving popover
-    elements.popover.addEventListener('mouseleave', () => {
-        mouseOverPopover = false;
-        schedulePopoverClose();
-    });
+    // Only use hover events on non-touch devices
+    if (!isTouch) {
+        // Track mouse over popover - cancel close when entering
+        elements.popover.addEventListener('mouseenter', () => {
+            mouseOverPopover = true;
+            cancelPopoverClose();
+        });
+        
+        // Schedule close when leaving popover
+        elements.popover.addEventListener('mouseleave', () => {
+            mouseOverPopover = false;
+            schedulePopoverClose();
+        });
+    }
     
-    // Close on backdrop click (for mobile/touch)
+    // Close on backdrop click/touch
     elements.popoverBackdrop.addEventListener('click', closePopover);
     
     // Close on close button
@@ -909,3 +947,4 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+
