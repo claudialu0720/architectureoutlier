@@ -1,5 +1,5 @@
 /**
- * ARCHITECTURE OUTLIER - Main JavaScript
+ * OUT OF ARCHITECTURE - Main JavaScript
  * 
  * A clean, simple implementation that:
  * - Handles hero-to-navbar morphing animation on scroll
@@ -492,11 +492,21 @@ function getProjectsFromSub(sub) {
     // Old format: articleUrl/videoUrl directly on subcategory
     // Convert to single-item projects array for backward compatibility
     if (sub.articleUrl || sub.videoUrl) {
+        // Ensure videoUrl is always an array for consistency
+        let videoField = sub.videoUrl;
+        if (!Array.isArray(videoField)) {
+            if (videoField == null) {
+                videoField = [];
+            } else {
+                videoField = [videoField];
+            }
+        }
+
         return [{
             personName: null,
             personUrl: null,
             articleUrl: sub.articleUrl,
-            videoUrl: sub.videoUrl
+            videoUrl: videoField
         }];
     }
     
@@ -583,20 +593,39 @@ function buildProjectEntry(project) {
     const linksContainer = document.createElement('div');
     linksContainer.className = 'popover__project-links';
     
-    // Video link
-    if (project.videoUrl) {
+    // Video links - support array of video URLs
+    const videoList = Array.isArray(project.videoUrl)
+        ? project.videoUrl
+        : (project.videoUrl ? [project.videoUrl] : []);
+
+    if (videoList.length === 1) {
         const videoLink = document.createElement('a');
         videoLink.className = 'popover__link';
-        videoLink.href = project.videoUrl;
+        videoLink.href = videoList[0];
         videoLink.target = '_blank';
         videoLink.rel = 'noopener noreferrer';
         videoLink.textContent = 'video';
         videoLink.addEventListener('click', (e) => {
             e.preventDefault();
             closePopover();
-            openVideoModal(project.videoUrl);
+            openVideoModal(videoList[0]);
         });
         linksContainer.appendChild(videoLink);
+    } else if (videoList.length > 1) {
+        videoList.forEach((vurl, vi) => {
+            const videoLink = document.createElement('a');
+            videoLink.className = 'popover__link';
+            videoLink.href = vurl;
+            videoLink.target = '_blank';
+            videoLink.rel = 'noopener noreferrer';
+            videoLink.textContent = `video ${vi + 1}`;
+            videoLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                closePopover();
+                openVideoModal(vurl);
+            });
+            linksContainer.appendChild(videoLink);
+        });
     }
     
     // Article link
@@ -947,4 +976,3 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
-

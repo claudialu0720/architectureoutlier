@@ -10,7 +10,7 @@
               "personName": "Caring Wong",
               "personUrl": "https://www.caringwong.com/",
               "articleUrl": "http://xhslink.com/o/6BjNLA8ScM0 ",
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         },
@@ -21,7 +21,7 @@
               "personName": "Yuqiao Guo",
               "personUrl": "https://www.yuqiaoguo.com/",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         },
@@ -32,7 +32,7 @@
               "personName": "Annie Yuxi",
               "personUrl": "https://yuxilinks.cargo.site/",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         }
@@ -48,7 +48,7 @@
               "personName": "Chaoying Zhao",
               "personUrl": "https://www.xiaohongshu.com/user/profile/5dbcb6770000000001004c8a",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         },
@@ -59,7 +59,7 @@
               "personName": "Mario Serrano Puche",
               "personUrl": "https://bodyamplificationdevices.com/pages/contact",
               "articleUrl": "https://mp.weixin.qq.com/s/DpTbXzFaX6kUUWIb_pNiAg",
-              "videoUrl": "https://www.bilibili.com/video/BV1HD7VzqEdD/"
+              "videoUrl": ["https://www.bilibili.com/video/BV1HD7VzqEdD/", "https://www.bilibili.com/video/BV1bDrPBFETE/?share_source=copy_web&vd_source=bd0950fd5d9821671bb0d116fd4077cf"]
             }
           ]
         },
@@ -70,7 +70,7 @@
               "personName": "Minh Le Pham",
               "personUrl": "https://www.minn.land/",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         }
@@ -86,7 +86,7 @@
               "personName": "Natcha Kucita",
               "personUrl": "https://slowconstruct.com/stories/natcha-kucita-bim-engineering-pottery-making",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         },
@@ -97,7 +97,7 @@
               "personName": "Kavi Ahuja Moltz",
               "personUrl": "https://emirateswoman.com/how-i-got-my-job-asco-founder-of-this-leading-ny-based-perfume-brand/",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         }
@@ -113,7 +113,7 @@
               "personName": "Yuqiao Guo",
               "personUrl": "https://www.matter-at-hand.com/",
               "articleUrl": "https://mp.weixin.qq.com/s/O682YYHHyKmzMQd3mFFuFQ",
-              "videoUrl": "https://www.bilibili.com/video/BV1dN41147hD/?vd_source=ff6bd2e678e129710791d68bd05b80d3"
+              "videoUrl": ["https://www.bilibili.com/video/BV1dN41147hD/?vd_source=ff6bd2e678e129710791d68bd05b80d3"]
             }
           ]
         },
@@ -124,7 +124,7 @@
               "personName": "Savinien Caracostea",
               "personUrl": "https://www.savinien.com/",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         },
@@ -135,7 +135,7 @@
               "personName": "Christine Smith",
               "personUrl": "https://archinect.com/features/article/150005103/from-architecture-to-marijuana-edibles-christine-smith-is-working-out-of-the-box",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         }
@@ -151,7 +151,7 @@
               "personName": "Claire Kuang",
               "personUrl": "https://clrkng.info/",
               "articleUrl": "https://mp.weixin.qq.com/s/Sga5yQMdq7RfZORJKtoLOg",
-              "videoUrl": "https://www.bilibili.com/video/BV14thWzgE6Q/?vd_source=ff6bd2e678e129710791d68bd05b80d3"
+              "videoUrl": ["https://www.bilibili.com/video/BV14thWzgE6Q/?vd_source=ff6bd2e678e129710791d68bd05b80d3", "https://www.bilibili.com/video/BV1RJrNBuE3M/?share_source=copy_web&vd_source=bd0950fd5d9821671bb0d116fd4077cf"]
             }
           ]
         },
@@ -162,7 +162,7 @@
               "personName": "Neil Leach",
               "personUrl": "https://neilleach.wordpress.com/",
               "articleUrl": null,
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         }
@@ -178,7 +178,7 @@
               "personName": "Jesslyn Guntur",
               "personUrl": "https://wellwellstudio.co/about",
               "articleUrl": "https://mp.weixin.qq.com/s/R5KdVdUof1JN1l1XTd89FQ",
-              "videoUrl": "https://www.bilibili.com/video/BV11egJemEj9/?vd_source=ff6bd2e678e129710791d68bd05b80d3"
+              "videoUrl": ["https://www.bilibili.com/video/BV11egJemEj9/?vd_source=ff6bd2e678e129710791d68bd05b80d3"]
             }
           ]
         },
@@ -189,7 +189,7 @@
               "personName": "Yao Mi",
               "personUrl": null,
               "articleUrl": "https://www.xiaohongshu.com/discovery/item/6584f3cf000000003c013faf?source=webshare&xhsshare=pc_web&xsec_token=CBEpKeG6Trk7tWgXq_UrEA4bE0dp7DhVadK1dUtmkWOMs=&xsec_source=pc_share",
-              "videoUrl": "https://www.bilibili.com/video/BV1Di4y187NW/?vd_source=ff6bd2e678e129710791d68bd05b80d3"
+              "videoUrl": ["https://www.bilibili.com/video/BV1Di4y187NW/?vd_source=ff6bd2e678e129710791d68bd05b80d3"]
             }
           ]
         },
@@ -200,7 +200,7 @@
               "personName": "Xiaozhu+Huohuo",
               "personUrl": null,
               "articleUrl": "https://mp.weixin.qq.com/s/3CQKtJBb7Bg3f8pdSRs0Fw",
-              "videoUrl": null
+              "videoUrl": ["https://www.bilibili.com/video/BV1u1rwBREFd/?share_source=copy_web&vd_source=bd0950fd5d9821671bb0d116fd4077cf"]
             }
           ]
         }
@@ -216,7 +216,7 @@
               "personName": "Karen Wang",
               "personUrl": "https://jes-network.com/awardee-details/2289",
               "articleUrl": "https://www.xiaohongshu.com/discovery/item/67f8cb8c000000001c02c3bd?source=webshare&xhsshare=pc_web&xsec_token=ABd4SrGpRfZ51d-CT_j64N7J9CvhYIZdwZFwd_Ymm-5E4=&xsec_source=pc_share",
-              "videoUrl": "https://www.bilibili.com/video/BV1s3dqY4EQD/?vd_source=ff6bd2e678e129710791d68bd05b80d3"
+              "videoUrl": ["https://www.bilibili.com/video/BV1s3dqY4EQD/?vd_source=ff6bd2e678e129710791d68bd05b80d3"]
             }
           ]
         }
@@ -232,14 +232,11 @@
               "personName": "Tommy Yu",
               "personUrl": null,
               "articleUrl": "https://mp.weixin.qq.com/s/s41Fkji3mwU0Tqw8azddhg",
-              "videoUrl": null
+              "videoUrl": []
             }
           ]
         }
       ]
     }
-    
-    
-    
   ]
 }
