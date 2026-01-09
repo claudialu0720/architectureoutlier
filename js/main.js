@@ -286,6 +286,30 @@ function initScrollListener() {
     
     // Set initial state
     handleHeroScroll();
+
+    // Click on scroll indicator should smoothly scroll to reveal content
+    if (elements.heroScrollIndicator) {
+        // Enable interactions (CSS had pointer-events:none for performance)
+        elements.heroScrollIndicator.style.cursor = 'pointer';
+        elements.heroScrollIndicator.style.pointerEvents = 'auto';
+        // ARIA/keyboard accessibility
+        elements.heroScrollIndicator.setAttribute('role', 'button');
+        elements.heroScrollIndicator.setAttribute('tabindex', '0');
+
+        const scrollToExplore = (evt) => {
+            if (evt && evt.preventDefault) evt.preventDefault();
+            const targetY = HERO_CONFIG.scrollDistance;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+        };
+
+        elements.heroScrollIndicator.addEventListener('click', scrollToExplore);
+        elements.heroScrollIndicator.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                scrollToExplore(e);
+            }
+        });
+    }
 }
 
 /* ============================================
