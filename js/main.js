@@ -298,8 +298,50 @@ function initScrollListener() {
 
         const scrollToExplore = (evt) => {
             if (evt && evt.preventDefault) evt.preventDefault();
-            const targetY = HERO_CONFIG.scrollDistance;
+            // Compute extra top padding of the main content so final position
+            // aligns the body content directly under the navbar.
+            let extraPadding = 0;
+            try {
+                const grid = document.getElementById('grid-section');
+                if (grid) {
+                    const cs = window.getComputedStyle(grid);
+                    const paddingTop = cs.getPropertyValue('padding-top');
+                    if (paddingTop && paddingTop.endsWith('px')) {
+                        extraPadding = parseFloat(paddingTop);
+                    }
+                }
+            } catch (e) {
+                // ignore and fallback to 0
+            }
+
+            const targetY = HERO_CONFIG.scrollDistance + extraPadding;
+
+            // Smooth scroll first
             window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+            // Ensure final position is exact: listen for scroll and snap if needed
+            let snapped = false;
+            const onScrollConfirm = () => {
+                if (Math.abs(window.scrollY - targetY) <= 1) {
+                    // We're close enough - ensure exact
+                    window.removeEventListener('scroll', onScrollConfirm);
+                    if (!snapped) {
+                        window.scrollTo({ top: targetY, behavior: 'auto' });
+                        snapped = true;
+                    }
+                }
+            };
+
+            window.addEventListener('scroll', onScrollConfirm);
+
+            // Fallback: after 700ms ensure we're exactly at target
+            const fallback = setTimeout(() => {
+                window.removeEventListener('scroll', onScrollConfirm);
+                if (!snapped) {
+                    window.scrollTo({ top: targetY, behavior: 'auto' });
+                    snapped = true;
+                }
+            }, 700);
         };
 
         elements.heroScrollIndicator.addEventListener('click', scrollToExplore);
