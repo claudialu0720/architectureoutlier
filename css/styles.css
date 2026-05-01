@@ -931,9 +931,9 @@ img {
    Call to action box at the bottom of the grid.
    ============================================ */
 .cta-box {
-    max-width: 500px;
+    max-width: 380px;
     margin: var(--spacing-xxl) auto 0;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
     background-color: #ffffff;
     border: 1px solid #000000;
     text-align: center;
@@ -946,14 +946,14 @@ img {
 
 .cta-box p {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #1a1a1a;
 }
 
 .cta-box__link {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #cc0000;
     text-decoration: underline;
@@ -1079,13 +1079,13 @@ img {
     }
 
     .cta-box {
-        max-width: 90%;
+        max-width: 320px;
         margin-top: var(--spacing-xl);
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .cta-box p, .cta-box__link {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -1190,7 +1190,7 @@ img {
     }
 
     .cta-box p, .cta-box__link {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
 
