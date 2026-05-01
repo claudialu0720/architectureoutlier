@@ -927,6 +927,46 @@ img {
 }
 
 /* ============================================
+   CTA BOX
+   Call to action box at the bottom of the grid.
+   ============================================ */
+.cta-box {
+    max-width: 500px;
+    margin: var(--spacing-xxl) auto 0;
+    padding: var(--spacing-lg);
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.cta-box p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.cta-box__link {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #cc0000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: all 0.2s ease;
+}
+
+.cta-box__link:hover {
+    color: #ff0000;
+    text-decoration-thickness: 2px;
+}
+
+/* ============================================
    RESPONSIVE STYLES
    Comprehensive breakpoints for all devices.
    ============================================ */
@@ -1037,6 +1077,16 @@ img {
     .contact__panel {
         width: 260px;
     }
+
+    .cta-box {
+        max-width: 90%;
+        margin-top: var(--spacing-xl);
+        padding: var(--spacing-md);
+    }
+
+    .cta-box p, .cta-box__link {
+        font-size: 1rem;
+    }
 }
 
 /* Mobile landscape (640px) */
@@ -1132,6 +1182,15 @@ img {
     .category-header {
         font-size: 1.1rem;
         letter-spacing: 0.15em;
+    }
+
+    .cta-box {
+        padding: var(--spacing-sm);
+        margin-top: var(--spacing-lg);
+    }
+
+    .cta-box p, .cta-box__link {
+        font-size: 0.9rem;
     }
 }
 
