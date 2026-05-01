@@ -69,11 +69,11 @@
       "name": "Product",
       "subcategories": [
         {
-          "name": "Ceramic",
+          "name": "Phygital",
           "projects": [
             {
-              "personName": "Natcha Kucita",
-              "personUrl": "https://slowconstruct.com/stories/natcha-kucita-bim-engineering-pottery-making",
+              "personName": "A\\O Pocket Oracle",
+              "personUrl": "https://www.aomyfortune.cn/",
               "articleUrl": null,
               "videoUrl": []
             }
